@@ -7,7 +7,7 @@ include_once '../../config/Database.php';
 include_once '../../module/Post.php';
 
 $database = new Database;
-$database->connect();
+$db = $database->connect();
 
 $post = new Post($db);
 $result = $post->read();
