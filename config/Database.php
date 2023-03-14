@@ -8,7 +8,7 @@ class Database {
     private $conn;
 
     public function connect(){
-        // $this->conn = null;
+        $this->conn = null;
 
         try{
             $this->conn = new PDO("mysql:host=" . $this->servername . ";dbname=" . $this->dbname, $this->username, $this->password);
@@ -18,6 +18,8 @@ class Database {
         }catch(PDOException $e){
             echo "Error" . $e->getMessage();
         }
+
+        return $this->conn;
     }
 }
 
